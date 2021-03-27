@@ -10,7 +10,7 @@
             </summary>
             <returns>A collection of Students</returns>
             <response code="200">Returns a collection of Students</response>
-            <response code="500">Internal error</response>
+            <response code="500">Internal error</response>      
         </member>
         <member name="M:Lab6.Controllers.StudentsController.GetById(System.Guid)">
             <summary>
@@ -20,7 +20,7 @@
             <returns>A Student</returns>
             <response code="201">Returns a collection of Students</response>
             <response code="400">If the id is malformed</response>      
-            <response code="404">If the Student is null</response>      
+            <response code="404">If the Students is null</response>      
             <response code="500">Internal error</response>
         </member>
         <member name="M:Lab6.Controllers.StudentsController.CreateAsync(Lab6.Models.StudentBase)">
@@ -32,9 +32,9 @@
             
                  POST /Students
                  {
-                    "FirstName": "FirstName",
-                    "LastName": "LastName",
-                    "Program": "Program"
+                    "FirstName": "fname",
+                    "LastName": "lname",
+                    "Program": "program"
                  }
             
              </remarks>
@@ -43,25 +43,25 @@
              <response code="400">If the Student is malformed</response>      
              <response code="500">Internal error</response>
         </member>
-        <member name="M:Lab6.Controllers.StudentsController.Upsert(System.Guid,Lab6.Models.StudentBase)">
+        <member name="M:Lab6.Controllers.StudentsController.Update(System.Guid,Lab6.Models.StudentBase)">
              <summary>
-             Upserts a Student.
+             Update a Student.
              </summary>
              <remarks>
              Sample request:
             
                  PUT /Students
                  {
-                    "FirstName": "FirstName",
-                    "LastName": "LastName",
-                    "Program": "Program"
+                    "FirstName": "fname",
+                    "LastName": "lname",
+                    "Program": "program"
                  }
             
              </remarks>
              <param id="id"></param>
-             <returns>An upserted Student</returns>
+             <returns>An updated Student</returns>
              <response code="200">Returns the updated Student</response>
-             <response code="201">Returns the newly created Student</response>
+             <response code="404">If the Resource does not exist </response>
              <response code="400">If the Student or id is malformed</response>      
              <response code="500">Internal error</response>
         </member>
